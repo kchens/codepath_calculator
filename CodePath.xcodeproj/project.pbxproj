@@ -13,6 +13,7 @@
 		290C69A11B8194F200B76F94 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 290C69A01B8194F200B76F94 /* Images.xcassets */; };
 		290C69A41B8194F200B76F94 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 290C69A21B8194F200B76F94 /* LaunchScreen.xib */; };
 		290C69B01B8194F200B76F94 /* CodePathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290C69AF1B8194F200B76F94 /* CodePathTests.swift */; };
+		290C69BA1B81C20700B76F94 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290C69B91B81C20700B76F94 /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		290C69A91B8194F200B76F94 /* CodePathTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodePathTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		290C69AE1B8194F200B76F94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		290C69AF1B8194F200B76F94 /* CodePathTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodePathTests.swift; sourceTree = "<group>"; };
+		290C69B91B81C20700B76F94 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,8 +79,8 @@
 		290C69961B8194F100B76F94 /* CodePath */ = {
 			isa = PBXGroup;
 			children = (
+				290C69BB1B81C20E00B76F94 /* ViewControllers */,
 				290C69991B8194F200B76F94 /* AppDelegate.swift */,
-				290C699B1B8194F200B76F94 /* ViewController.swift */,
 				290C699D1B8194F200B76F94 /* Main.storyboard */,
 				290C69A01B8194F200B76F94 /* Images.xcassets */,
 				290C69A21B8194F200B76F94 /* LaunchScreen.xib */,
@@ -110,6 +112,15 @@
 				290C69AE1B8194F200B76F94 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		290C69BB1B81C20E00B76F94 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				290C699B1B8194F200B76F94 /* ViewController.swift */,
+				290C69B91B81C20700B76F94 /* SettingsViewController.swift */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,6 +225,7 @@
 			files = (
 				290C699C1B8194F200B76F94 /* ViewController.swift in Sources */,
 				290C699A1B8194F200B76F94 /* AppDelegate.swift in Sources */,
+				290C69BA1B81C20700B76F94 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>53EDEBE1-60DD-472E-B3D1-155C6E32A713</string>
+	<key>IDESourceControlProjectName</key>
+	<string>CodePath</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>97044063588399FCFE42F5645E30BB824504A58F</key>
+		<string>https://github.com/kchens/codepath_calculator.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>CodePath.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>97044063588399FCFE42F5645E30BB824504A58F</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/kchens/codepath_calculator.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>97044063588399FCFE42F5645E30BB824504A58F</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>97044063588399FCFE42F5645E30BB824504A58F</string>
+			<key>IDESourceControlWCCName</key>
+			<string>CodePath</string>
+		</dict>
+	</array>
+</dict>
+</plist>
