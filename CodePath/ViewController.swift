@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var billField: UITextField!
     @IBOutlet weak var tipTitle: UILabel!
     @IBOutlet weak var tipLabel: UILabel!
-    @IBOutlet weak var lineDivider: UIView!
+    @IBOutlet weak var lineDiv: UIView!
     @IBOutlet weak var totalTitle: UILabel!
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var tipControl: UISegmentedControl!
@@ -62,6 +62,7 @@ class ViewController: UIViewController {
     }
     
     func setUpView() {
+        setBillFieldBorders()
         setColorScheme()
         checkToClearBillAmount()
         updateLabels()
@@ -81,13 +82,44 @@ class ViewController: UIViewController {
         }
     }
     
+    func setBillFieldBorders() {
+        billField.layer.borderWidth = 1.0;
+        billField.layer.cornerRadius = 5.0;
+    }
+    
     func setColorScheme() {
         if defaults.boolForKey(darkThemeDefaultKey) {
             // Set darkTheme as default
-            view.backgroundColor = UIColor.blueColor()
+            view.backgroundColor      = UIColor.purpleColor()
+            currencyLabel.textColor   = UIColor.whiteColor()
+            billTitle.textColor       = UIColor.whiteColor()
+            
+            billField.backgroundColor = UIColor.purpleColor()
+            billField.layer.borderColor = UIColor.yellowColor().CGColor
+            billField.textColor       = UIColor.yellowColor()
+
+            tipTitle.textColor        = UIColor.whiteColor()
+            tipLabel.textColor        = UIColor.whiteColor()
+            lineDiv.backgroundColor   = UIColor.whiteColor()
+            totalTitle.textColor      = UIColor.whiteColor()
+            totalLabel.textColor      = UIColor.whiteColor()
+            tipControl.tintColor      = UIColor.yellowColor()
         } else {
-            // Set standard white theme
-            view.backgroundColor = UIColor.greenColor()
+            // Set non-default theme
+            view.backgroundColor      = UIColor.greenColor()
+            currencyLabel.textColor   = UIColor.blackColor()
+            billTitle.textColor       = UIColor.blackColor()
+            
+            billField.backgroundColor = UIColor.greenColor()
+            billField.layer.borderColor = UIColor.blueColor().CGColor
+            billField.textColor       = UIColor.blueColor()
+            
+            tipTitle.textColor        = UIColor.blackColor()
+            tipLabel.textColor        = UIColor.blackColor()
+            lineDiv.backgroundColor   = UIColor.blackColor()
+            totalTitle.textColor      = UIColor.blackColor()
+            totalLabel.textColor      = UIColor.blackColor()
+            tipControl.tintColor      = UIColor.blueColor()
         }
     }
     

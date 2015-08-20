@@ -105,7 +105,7 @@
                         <outlet property="billField" destination="yff-71-tcf" id="9G3-6q-jrC"/>
                         <outlet property="billTitle" destination="dC8-SK-YVG" id="K0m-BB-vlb"/>
                         <outlet property="currencyLabel" destination="OCa-9a-cLf" id="igK-dX-Ulz"/>
-                        <outlet property="lineDivider" destination="kqg-ju-jhe" id="LDt-Pq-bPr"/>
+                        <outlet property="lineDiv" destination="kqg-ju-jhe" id="0xh-CA-Lk6"/>
                         <outlet property="tipControl" destination="cti-Xl-sdZ" id="fZq-yy-YbM"/>
                         <outlet property="tipLabel" destination="EYg-q2-FKq" id="DxL-eA-UKw"/>
                         <outlet property="tipTitle" destination="PvX-uR-R0g" id="lFW-CK-gfF"/>
@@ -122,7 +122,7 @@
             </objects>
             <point key="canvasLocation" x="742" y="319"/>
         </scene>
-        <!--Title-->
+        <!--Settings-->
         <scene sceneID="9gj-ex-74j">
             <objects>
                 <viewController id="eV0-3V-YzW" customClass="SettingsViewController" customModule="CodePath" customModuleProvider="target" sceneMemberID="viewController">
@@ -170,7 +170,7 @@
                     <toolbarItems>
                         <barButtonItem title="Item" id="kYe-tl-pO3"/>
                     </toolbarItems>
-                    <navigationItem key="navigationItem" title="Title" id="4ZC-vn-5nV"/>
+                    <navigationItem key="navigationItem" title="Settings" id="4ZC-vn-5nV"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="darkThemeSwitch" destination="rN8-HI-65m" id="wVo-4d-w64"/>
