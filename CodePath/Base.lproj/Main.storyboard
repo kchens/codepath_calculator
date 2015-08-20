@@ -103,10 +103,14 @@
                     </navigationItem>
                     <connections>
                         <outlet property="billField" destination="yff-71-tcf" id="9G3-6q-jrC"/>
-                        <outlet property="currencyLabel" destination="OCa-9a-cLf" id="vDY-k9-HPz"/>
+                        <outlet property="billTitle" destination="dC8-SK-YVG" id="K0m-BB-vlb"/>
+                        <outlet property="currencyLabel" destination="OCa-9a-cLf" id="igK-dX-Ulz"/>
+                        <outlet property="lineDivider" destination="kqg-ju-jhe" id="LDt-Pq-bPr"/>
                         <outlet property="tipControl" destination="cti-Xl-sdZ" id="fZq-yy-YbM"/>
-                        <outlet property="tipLabel" destination="EYg-q2-FKq" id="mAH-cx-3K9"/>
+                        <outlet property="tipLabel" destination="EYg-q2-FKq" id="DxL-eA-UKw"/>
+                        <outlet property="tipTitle" destination="PvX-uR-R0g" id="lFW-CK-gfF"/>
                         <outlet property="totalLabel" destination="oL1-yS-EUN" id="GAz-QQ-vnG"/>
+                        <outlet property="totalTitle" destination="sLL-KI-ePP" id="Sj9-dL-hAJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -118,7 +122,7 @@
             </objects>
             <point key="canvasLocation" x="742" y="319"/>
         </scene>
-        <!--Settings-->
+        <!--Title-->
         <scene sceneID="9gj-ex-74j">
             <objects>
                 <viewController id="eV0-3V-YzW" customClass="SettingsViewController" customModule="CodePath" customModuleProvider="target" sceneMemberID="viewController">
@@ -126,15 +130,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a default tip percentage" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2PE-Te-GAb">
-                                <rect key="frame" x="37" y="129" width="246" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="SWZ-Ml-gmr">
-                                <rect key="frame" x="43" y="205" width="235" height="29"/>
+                                <rect key="frame" x="153" y="119" width="151" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="10%"/>
@@ -145,12 +142,38 @@
                                     <action selector="onEditingDefaultChanged:" destination="eV0-3V-YzW" eventType="valueChanged" id="Gob-Zh-Cmp"/>
                                 </connections>
                             </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dark Theme:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Rlz-hL-Lkg">
+                                <rect key="frame" x="32" y="177" width="98" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="rN8-HI-65m">
+                                <rect key="frame" x="204" y="172" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="onTapSwitchTheme:" destination="eV0-3V-YzW" eventType="valueChanged" id="Ebm-0d-4Ro"/>
+                                    <action selector="onTapSwitchTheme:" destination="eV0-3V-YzW" eventType="editingChanged" id="xRT-1P-xxD"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Default Tip:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2PE-Te-GAb">
+                                <rect key="frame" x="32" y="119" width="88" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Settings" id="uxx-lg-7U2"/>
+                    <toolbarItems>
+                        <barButtonItem title="Item" id="kYe-tl-pO3"/>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="Title" id="4ZC-vn-5nV"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="backButton" destination="uxx-lg-7U2" id="brx-zR-ev8"/>
+                        <outlet property="darkThemeSwitch" destination="rN8-HI-65m" id="wVo-4d-w64"/>
                         <outlet property="tipControl" destination="SWZ-Ml-gmr" id="Yfz-cC-qXL"/>
                     </connections>
                 </viewController>

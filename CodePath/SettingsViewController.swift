@@ -12,17 +12,20 @@ class SettingsViewController: UIViewController {
     
     @IBOutlet weak var backButton: UINavigationItem!
     @IBOutlet weak var tipControl: UISegmentedControl!
+    @IBOutlet weak var darkThemeSwitch: UISwitch!
     
     // Set constants
     let defaults          = NSUserDefaults.standardUserDefaults()
-    let tipControlDefault = "tipControlDefault"
+    let tipControlDefaultKey = "tipControlDefaultKey"
+    let darkThemeDefaultKey  = "darkThemeDefaultKey"
+    let switchButtonKey      = "switchButtonKey"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        var defaults = NSUserDefaults.standardUserDefaults()
-        var intValue = defaults.integerForKey(tipControlDefault)
+        var intValue = defaults.integerForKey(tipControlDefaultKey)
         tipControl.selectedSegmentIndex = intValue
+        darkThemeSwitch.on = defaults.boolForKey(darkThemeDefaultKey)
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,10 +39,17 @@ class SettingsViewController: UIViewController {
 
     @IBAction func onEditingDefaultChanged(sender: AnyObject) {
         var chosenTipIndex = tipControl.selectedSegmentIndex
-        defaults.setInteger(chosenTipIndex, forKey: tipControlDefault)
+        defaults.setInteger(chosenTipIndex, forKey: tipControlDefaultKey)
         defaults.synchronize()
     }
 
+    @IBAction func onTapSwitchTheme(sender: AnyObject) {
+        if darkThemeSwitch.on {
+            defaults.setBool(true, forKey: darkThemeDefaultKey)
+        } else {
+            defaults.setBool(false, forKey: darkThemeDefaultKey)
+        }
+    }
     /*
     // MARK: - Navigation
 

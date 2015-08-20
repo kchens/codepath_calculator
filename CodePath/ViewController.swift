@@ -9,17 +9,22 @@
 import UIKit
 
 class ViewController: UIViewController {
-    @IBOutlet weak var billField: UITextField!
+    @IBOutlet weak var billTitle: UILabel!
     @IBOutlet weak var currencyLabel: UILabel!
+    @IBOutlet weak var billField: UITextField!
+    @IBOutlet weak var tipTitle: UILabel!
     @IBOutlet weak var tipLabel: UILabel!
+    @IBOutlet weak var lineDivider: UIView!
+    @IBOutlet weak var totalTitle: UILabel!
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var tipControl: UISegmentedControl!
     
     // Set constants
-    let defaults          = NSUserDefaults.standardUserDefaults()
-    let lastBillKey       = "lastBillKey"
-    let tipControlDefault = "tipControlDefault"
-    let startBlank        = "startBlank"
+    let defaults             = NSUserDefaults.standardUserDefaults()
+    let lastBillKey          = "lastBillKey"
+    let tipControlDefaultKey = "tipControlDefaultKey"
+    let startBlank           = "startBlank"
+    let darkThemeDefaultKey  = "darkThemeDefaultKey"
     
     var currencySymbol    = ""
 
@@ -57,16 +62,13 @@ class ViewController: UIViewController {
     }
     
     func setUpView() {
+        setColorScheme()
         checkToClearBillAmount()
-        
-//        var lastTipIndex = defaults.integerForKey("lastTipIndex")
-//        if lastTipIndex >= 0 && lastTipIndex <= 2 {
-//            tipControl.selectedSegmentIndex = lastTipIndex
-//            println("-------")
-//            println(tipControl.selectedSegmentIndex)
-//        }
         updateLabels()
-        
+        localizeCurrency()
+    }
+    
+    func localizeCurrency() {
         currencySymbol = NSLocale.currentLocale().objectForKey(NSLocaleCurrencySymbol) as! String
         currencyLabel.text = currencySymbol
     }
@@ -76,6 +78,16 @@ class ViewController: UIViewController {
             billField.text = ""
         } else {
             billField.text = defaults.stringForKey(lastBillKey)
+        }
+    }
+    
+    func setColorScheme() {
+        if defaults.boolForKey(darkThemeDefaultKey) {
+            // Set darkTheme as default
+            view.backgroundColor = UIColor.blueColor()
+        } else {
+            // Set standard white theme
+            view.backgroundColor = UIColor.greenColor()
         }
     }
     
@@ -94,7 +106,8 @@ class ViewController: UIViewController {
         super.viewDidAppear(animated)
         println("view did appear")
         
-        tipControl.selectedSegmentIndex = defaults.integerForKey(tipControlDefault)
+        setColorScheme()
+        tipControl.selectedSegmentIndex = defaults.integerForKey(tipControlDefaultKey)
         updateLabels()
         saveAppState()
     }
