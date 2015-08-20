@@ -41,7 +41,6 @@ class ViewController: UIViewController {
     }
 
     @IBAction func onEditingChanged(sender: AnyObject) {
-        
         updateLabels()
     }
     
@@ -62,11 +61,14 @@ class ViewController: UIViewController {
     }
     
     func setUpView() {
+        animateBillField()
+        animateLineDiv()
         setBillFieldBorders()
         setColorScheme()
         checkToClearBillAmount()
         updateLabels()
         localizeCurrency()
+        billField.becomeFirstResponder()
     }
     
     func localizeCurrency() {
@@ -123,6 +125,31 @@ class ViewController: UIViewController {
         }
     }
     
+    func animateBillField() {
+        billField.alpha  = 1
+        tipControl.alpha = 1
+        UIView.animateWithDuration(2, animations: {
+            self.billField.alpha = 0
+            self.tipControl.alpha = 0
+            },
+            completion: {
+                (value: Bool) in
+                UIView.animateWithDuration(2, animations: {
+                    self.billField.alpha  = 1
+                    self.tipControl.alpha = 1
+                })
+        })
+
+    }
+    
+    func animateLineDiv() {
+        lineDiv.alpha = 0
+        
+        UIView.animateWithDuration(2, animations: {
+            self.lineDiv.alpha = 1
+        })
+    }
+    
     func saveAppState() {
         defaults.setObject(billField.text, forKey: lastBillKey)
         defaults.setInteger(tipControl.selectedSegmentIndex, forKey: "lastTipIndex")
@@ -132,16 +159,15 @@ class ViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         println("view will appear")
+        setColorScheme()
+        tipControl.selectedSegmentIndex = defaults.integerForKey(tipControlDefaultKey)
+        updateLabels()
+        saveAppState()
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         println("view did appear")
-        
-        setColorScheme()
-        tipControl.selectedSegmentIndex = defaults.integerForKey(tipControlDefaultKey)
-        updateLabels()
-        saveAppState()
     }
     
     override func viewWillDisappear(animated: Bool) {

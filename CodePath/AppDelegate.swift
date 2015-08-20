@@ -46,7 +46,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         println("applicationDidBecomeActive")
         
         if defaults.objectForKey(lastCloseTimeKey) != nil {
-//            let oneMinute = 60
             let tenMinutes = 10 * 60
             
             let currentTime = NSDate()
