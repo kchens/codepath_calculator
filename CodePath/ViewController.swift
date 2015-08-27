@@ -138,7 +138,6 @@ class ViewController: UIViewController {
           self.tipControl.alpha = 1
         })
     })
-
   }
   
   func animateLineDiv() {
