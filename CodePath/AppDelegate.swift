@@ -23,13 +23,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillResignActive(application: UIApplication) {
-        println("applicationWillResignActive")
+//        println("applicationWillResignActive")
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
     }
 
     func applicationDidEnterBackground(application: UIApplication) {
-        println("applicationDidEnterBackground")
+//        println("applicationDidEnterBackground")
         
         defaults.setObject(NSDate(), forKey: lastCloseTimeKey)
         
@@ -38,12 +38,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillEnterForeground(application: UIApplication) {
-        println("applicationWillEnterForeground")
+//        println("applicationWillEnterForeground")
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
     }
 
     func applicationDidBecomeActive(application: UIApplication) {
-        println("applicationDidBecomeActive")
+//        println("applicationDidBecomeActive")
         
         if defaults.objectForKey(lastCloseTimeKey) != nil {
             let tenMinutes = 10 * 60
@@ -52,15 +52,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let lastCloseTime: NSDate = (defaults.objectForKey(lastCloseTimeKey) as! NSDate)
             let intervalMinutes = NSInteger(round(currentTime.timeIntervalSinceDate(lastCloseTime)))
             
-            println("--curr: \(currentTime)")
-            println("--prev: \(lastCloseTime)")
-            println("--interval: \(intervalMinutes)")
+//            println("--curr: \(currentTime)")
+//            println("--prev: \(lastCloseTime)")
+//            println("--interval: \(intervalMinutes)")
             
             if intervalMinutes > tenMinutes {
-                println("clearrrr")
+//                println("clearrrr")
                 defaults.setBool(true, forKey: startBlank)
             } else {
-                println("dont clear")
+//                println("dont clear")
                 defaults.setBool(false, forKey: startBlank)
             }
         } else {
@@ -70,7 +70,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillTerminate(application: UIApplication) {
-        println("applicationWillTerminate")
+//        println("applicationWillTerminate")
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 

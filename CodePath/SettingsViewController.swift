@@ -23,7 +23,7 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        var intValue = defaults.integerForKey(tipControlDefaultKey)
+        let intValue = defaults.integerForKey(tipControlDefaultKey)
         tipControl.selectedSegmentIndex = intValue
         darkThemeSwitch.on = defaults.boolForKey(darkThemeDefaultKey)
     }
@@ -38,7 +38,7 @@ class SettingsViewController: UIViewController {
     }
 
     @IBAction func onEditingDefaultChanged(sender: AnyObject) {
-        var chosenTipIndex = tipControl.selectedSegmentIndex
+        let chosenTipIndex = tipControl.selectedSegmentIndex
         defaults.setInteger(chosenTipIndex, forKey: tipControlDefaultKey)
         defaults.synchronize()
     }

@@ -25,6 +25,7 @@ class ViewController: UIViewController {
     let tipControlDefaultKey = "tipControlDefaultKey"
     let startBlank           = "startBlank"
     let darkThemeDefaultKey  = "darkThemeDefaultKey"
+    let tipPercentages = [0.10, 0.15, 0.2]
     
     var currencySymbol    = ""
 
@@ -49,12 +50,11 @@ class ViewController: UIViewController {
     }
     
     func updateLabels() {
-        var tipPercentages = [0.10, 0.15, 0.2]
-        var tipPercentage = tipPercentages[tipControl.selectedSegmentIndex]
+        let tipPercentage = tipPercentages[tipControl.selectedSegmentIndex]
         
-        var billAmount = NSString(string: billField.text).doubleValue
-        var tip = billAmount * tipPercentage
-        var total = billAmount + tip
+        let billAmount = NSString(string: billField.text).doubleValue
+        let tip = billAmount * tipPercentage
+        let total = billAmount + tip
         
         tipLabel.text = NSNumberFormatter.localizedStringFromNumber(tip as NSNumber, numberStyle: NSNumberFormatterStyle.CurrencyStyle)
         totalLabel.text = NSNumberFormatter.localizedStringFromNumber(total as NSNumber, numberStyle: NSNumberFormatterStyle.CurrencyStyle)
@@ -158,7 +158,7 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        println("view will appear")
+//        println("view will appear")
         setColorScheme()
         tipControl.selectedSegmentIndex = defaults.integerForKey(tipControlDefaultKey)
         updateLabels()
@@ -167,17 +167,17 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        println("view did appear")
+//        println("view did appear")
     }
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         saveAppState()
-        println("view will disappear")
+//        println("view will disappear")
     }
     
     override func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(animated)
-        println("view did disappear")
+//        println("view did disappear")
     }
 }
